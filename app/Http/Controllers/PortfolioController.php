@@ -35,6 +35,10 @@ class PortfolioController extends Controller
 
     $project_rows="";
 
+    if(!empty($projects))
+
+    {
+
     foreach($projects as $project)
     {
 
@@ -57,6 +61,24 @@ class PortfolioController extends Controller
                 </div>
             </div>
             ';
+
+    }
+
+    }
+
+    else
+    {
+
+         $project_rows .='
+
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+
+        <h4>No Projects Found</h4>
+
+        </div>
+
+        ';
+
 
     }
 

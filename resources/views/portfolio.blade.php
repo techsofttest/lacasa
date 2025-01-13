@@ -98,7 +98,7 @@
 	 
 	 
    
- <div class="tp-project-area tp-project-style-2 fix Projectsec-twosec" id="portdlolio-Ids">
+ <div class="tp-project-area tp-project-style-2 Projectsec-twosec" id="portdlolio-Ids">
  <div class="container">
  <div class="row">
   <div class="col-lg-12">
