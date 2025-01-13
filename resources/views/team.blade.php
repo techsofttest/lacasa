@@ -37,6 +37,12 @@
 	object-fit:cover;
 	}
 
+	.tty-imqage-box img
+	{
+	height: 40vh;
+	object-fit: cover;
+	}
+
 </style>
 
 
