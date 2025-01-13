@@ -19,7 +19,8 @@ class NewsController extends Controller
 
     $data['dates'] = DB::table('news')
     ->selectRaw('DISTINCT DATE_FORMAT(news_date, "%Y-%m") as month_year')
-    ->orderBy('news_date', 'asc')
+    ->orderByRaw('MIN(news_date) asc')
+    ->groupBy('month_year')
     ->get();
 
     return view('news_detail',$data);
