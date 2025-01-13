@@ -392,6 +392,8 @@
 
  
 
+            @if(!empty($ad_video->video))
+
            
       <div class="mvideo-container mmy_video_c" style="    background: #f8f8f8;">
     <div class="mvideo-item" data-portrait-index="0" data-vimeo="299739458"  data-vimeo-start="0s" data-vimeo-width="640" data-vimeo-height="272">
@@ -402,6 +404,8 @@
         </div>
     
  </div>
+
+ @endif
    
    
    
