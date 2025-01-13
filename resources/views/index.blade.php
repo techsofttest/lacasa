@@ -86,6 +86,35 @@
                         @endif
 
 
+
+                        <div class="swiper-slide">
+                           <div class="tp-slider-3-height p-relative fix grey-bg">
+                            <img class="tp-slider-3-bg tp-slider-3-overlay" src="{{asset('storage')}}/{{$page->banner}}">
+                             <div class="Banner-slide" >
+                             
+                              <div class="container">
+                                 <div class=" p-relative">
+                                    <div class="row align-items-center justify-content-between">
+									    <div class="col-lg-12">
+                                       <div class="baner-trexts">
+									   <h2>ELLINGTON</h2>
+									   </div>
+
+
+                                       </div>
+
+
+                                          
+                                    </div>
+
+
+                                 </div>
+								  </div>
+                              </div>
+                           </div>
+                        </div>
+
+
                         
 
                         @if($page && isset($page->slider_images) && is_array(json_decode($page->slider_images)))
