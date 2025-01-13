@@ -109,10 +109,10 @@
 
                     
             <li><a href="javascript:void(0);" onclick="openprofile(event, 'project1')" id="defaultOpen"  class="tablink mtablinks active">FEATURED PROJECTS</a></li>      
-            <li class=" menu-item-has-children"><a href="javascript:void(0);"   class="tablink mtablinks">All Projects</a>
+            <li class=" menu-item-has-children"><a href="javascript:void(0);"   class="tablink mtablinks all_projects clear_filter">All Projects</a>
 			
 			 <ul class="About-menu-sub"  >
-						 <button id="clear_filter">Clear</button>
+						 <button class="clear_filter">Clear</button>
 
                         @foreach($project_types as $project_type)
                            <li><span>{{$project_type->type}}</span><input type="checkbox" name="check[]" value="{{$project_type->id}}" class="type_check" onchange="openprofile(event, 'project2')"> </li>
@@ -323,7 +323,7 @@ $('.type_check').change(function(){
    })
 
 
-   $('#clear_filter').click(function()
+   $('.clear_filter').click(function()
    {
    
          // Uncheck all checkboxes with class 'check'
@@ -332,7 +332,6 @@ $('.type_check').change(function(){
          $('.type_check').trigger('change');
      
    })
-
 
 
 </script>

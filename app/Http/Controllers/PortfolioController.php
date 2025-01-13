@@ -30,8 +30,20 @@ class PortfolioController extends Controller
 
     $type_id = $request->input('type', []);
 
+    if(!empty($type_id))
+
+    {
+
     $projects = DB::table('projects')->whereIn('project_type_id',$type_id)->orderBy('order')->get();
 
+    }
+
+    else
+    {
+
+    $projects = DB::table('projects')->orderBy('order')->get();
+
+    }
 
     $project_rows="";
 
