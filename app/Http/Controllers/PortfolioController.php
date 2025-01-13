@@ -48,7 +48,7 @@ class PortfolioController extends Controller
                     <div class="tp-project-item fix">
                         <div class="tp-project-thumb">
                             <a href="'.url("project").'/'.$project->slug.'">
-                                <img class="w-100" src="'.asset("storage").'/'.$project->image.'" alt="'.$project->image.'">
+                                <img class="w-100" src="'.asset("storage").'/'.$project->thumb_image.'" alt="'.$project->name.'">
                             </a>
                         </div>
                     </div>
