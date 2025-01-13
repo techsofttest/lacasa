@@ -14,7 +14,9 @@ class PortfolioController extends Controller
 
     $data['project_types'] = DB::table('project_types')->orderBy('type')->get();
 
-    $data['projects'] = DB::table('projects')->where('featured',1)->orderBy('order')->get();
+    //$data['projects'] = DB::table('projects')->where('featured',1)->orderBy('order')->get();
+
+    $data['projects'] = DB::table('projects')->where('featured', 1)->orderBy('order')->paginate(6);
 
     $data['video1'] = DB::table('videos')->where('id',3)->first();
 
@@ -23,6 +25,16 @@ class PortfolioController extends Controller
     return view('portfolio',$data);
 
     }
+
+
+    public function loadMoreProjects(Request $request)
+    {
+    if ($request->ajax()) {
+        $projects = DB::table('projects')->where('featured', 1)->orderBy('order')->paginate(6, ['*'], 'page', $request->page);
+        return view('partials.projects', compact('projects'))->render();
+    }
+    }
+
 
 
     public function fetch_by_type(Request $request)

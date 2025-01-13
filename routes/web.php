@@ -105,6 +105,8 @@ Route::get('/portfolio',[PortfolioController::class,'index']);
 
 Route::get('/project/{slug}', [PortfolioController::class, 'show']);
 
+Route::get('/load-more-projects', [PortfolioController::class, 'loadMoreProjects']);
+
 Route::get('/team',[TeamController::class,'index']);
 
 Route::get('/news-and-insights',[NewsController::class,'index']);

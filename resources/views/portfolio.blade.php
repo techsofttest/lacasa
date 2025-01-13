@@ -10,6 +10,17 @@
 
 <style>
 
+  
+
+/* Disabled link */
+.pagination .disabled span {
+    color: #999;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+
 .About-menu li ul {
     min-height: 300px !important;
 }
@@ -131,43 +142,38 @@
 				
 				
 				 <!----------- Start  --------->
-<div id="project1" class="mtabcontent "  >
-		   <div class="row ">
-
-
-
-                    @foreach($projects as $project)
-
-                     <div class="col-lg-4 col-md-6 col-sm-6   wow tpfadeUp" data-wow-duration=".9s" data-wow-delay=".3s">
-                        <div class="tp-project-item-wrap p-relative">
-                           <div class="tp-project-item fix">
-                              <div class="tp-project-thumb">
-                                 <a href="{{url('project/'.$project->slug)}}"><div class="lightbox-button__wrapper"></div><img class="w-100" src="{{asset('storage/'.$project->thumb_image)}}"
-                                       alt=""></a>
-                              </div>
-                           </div>
-                           <div class="tp-project-content black-bg">
-                              <h6 class="tp-project-title"><a href="{{url('project/'.$project->slug)}}">
-</a></h6>
-
-                           </div>
-						      <div class="tp-project-last-title">
-                              <h6 class=" "><a href="{{url('project/'.$project->slug)}}">
-						         {{$project->name}}</a></h6>
-
-                           </div>
-						   
+             <div id="project1" class="mtabcontent">
+    <div class="row feat_project_rows" id="project-list">
+        @foreach($projects as $project)
+            <div class="col-lg-4 col-md-6 col-sm-6 wow tpfadeUp" data-wow-duration=".9s" data-wow-delay=".3s">
+                <div class="tp-project-item-wrap p-relative">
+                    <div class="tp-project-item fix">
+                        <div class="tp-project-thumb">
+                            <a href="{{ url('project/'.$project->slug) }}">
+                                <div class="lightbox-button__wrapper"></div>
+                                <img class="w-100" src="{{ asset('storage/'.$project->thumb_image) }}" alt="">
+                            </a>
                         </div>
-                     </div>
+                    </div>
+                    <div class="tp-project-content black-bg">
+                        <h6 class="tp-project-title">
+                            <a href="{{ url('project/'.$project->slug) }}"></a>
+                        </h6>
+                    </div>
+                    <div class="tp-project-last-title">
+                        <h6><a href="{{ url('project/'.$project->slug) }}">{{ $project->name }}</a></h6>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
 
-                     @endforeach
+</div>
 
 
 
 
-					 
-                  </div>
-		 </div>
+
 		 
 		  <div id="project2" class="mtabcontent"  >
 
@@ -195,12 +201,15 @@
 				  
 				  
 
+               @if ($projects->hasMorePages())
+
 				  <div class="text-center viemore-innersec-bb">
 
-		  
-		        <a href="#">View More</a>
+		        <a href="javascript:void(0)" id="load_more_featured" data-page="{{ $projects->currentPage() + 1 }}">View More</a>
 
-		  </div>
+		         </div>
+
+               @endif
 		  
 		  
 		  
@@ -334,6 +343,73 @@ $('.type_check').change(function(){
    })
 
 
+</script>
+
+
+
+
+<script>
+   /*
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('#pagination-links a').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                fetchProjects(this.href);
+            });
+        });
+    });
+
+    function fetchProjects(url) {
+        fetch(url, {
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            }
+        })
+        .then(response => response.text())
+        .then(data => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(data, 'text/html');
+            document.getElementById('project-list').innerHTML = doc.querySelector('#project-list').innerHTML;
+            document.getElementById('pagination-links').innerHTML = doc.querySelector('#pagination-links').innerHTML;
+            attachPaginationEvents(); // Reattach events to new links
+        });
+    }
+
+    function attachPaginationEvents() {
+        document.querySelectorAll('#pagination-links a').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                fetchProjects(this.href);
+            });
+        });
+    }
+    */
+</script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('load_more_featured').addEventListener('click', function () {
+            const button = this;
+            const page = button.getAttribute('data-page');
+            const url = `{{ url('load-more-projects') }}?page=${page}`;
+
+            fetch(url, {
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('project-list').insertAdjacentHTML('beforeend', data);
+                button.setAttribute('data-page', parseInt(page) + 1);
+                if (!data.trim()) {
+                    button.style.display = 'none'; // Hide button if no more data
+                }
+            })
+            .catch(error => console.error('Error loading more projects:', error));
+        });
+    });
 </script>
 
 
