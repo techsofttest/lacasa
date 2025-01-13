@@ -9,6 +9,8 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\AchievementController;
+use App\Http\Controllers\NewsController;
+
 
 /*
 use Livewire\Livewire;
@@ -105,7 +107,11 @@ Route::get('/project/{slug}', [PortfolioController::class, 'show']);
 
 Route::get('/team',[TeamController::class,'index']);
 
+Route::get('/news-and-insights',[NewsController::class,'index']);
+
 Route::get('/contact',[ContactController::class,'index']);
+
+Route::post ('/send-mail',[ContactController::class,'maildata'])->name('send_mail');
 
 Route::get('/services',[ServiceController::class,'index']);
 
@@ -122,6 +128,10 @@ Route::get('/clientele',[AchievementController::class,'clientele']);
 
 //Filter Projects
 Route::post('projects/filter',[PortfolioController::class,'fetch_by_type']);
+
+
+//Mail
+
 
 
 

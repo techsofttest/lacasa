@@ -410,10 +410,10 @@
 
                                  <div class="tp-blog-arrow-box d-block d-lg-block">
                                     <button class="blog-prev">
-                                    <img src="assets/img/b1.png" alt="">
+                                    <img src="{{asset('assets/img/b1.png')}}" alt="">
                                     </button>
                                     <button class="blog-next">
-                                    <img src="assets/img/b2.png" alt="">
+                                    <img src="{{asset('assets/img/b2.png')}}" alt="">
                                     </button>
                                  </div>
 
@@ -440,7 +440,7 @@
 								   <div class="news-left">
 								   <h3>{{$news->title}}</h3>
 								   <p>{{$news->description}}</p>
-								   <a class="nebbtn" href="#">View More</a>
+								   <a class="nebbtn" href="{{url('/news-and-insights')}}">View More</a>
 								   </div>
 								   
 								   </div>
