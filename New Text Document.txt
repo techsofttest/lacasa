@@ -1,0 +1,1 @@
+ALTER TABLE `teams` ADD `is_management` INT NOT NULL DEFAULT '0' AFTER `order`, ADD `about_image` VARCHAR(255) NULL AFTER `is_management`, ADD `about_desc` TEXT NOT NULL AFTER `about_image`; 
