@@ -122,7 +122,7 @@
                         <!-- First Row -->
                         <div class="first-row">
                             <div class="container">
-                                <div class="row @if($i % 2 != 0) justify-content-end @endif">
+                                <div class="row justify-content-end">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-6">
                                         <div class="managing-box-content-main">
                                             <div class="managing-box-content">
@@ -176,7 +176,7 @@
     <div class="container">
         <div class="text-center Get-in-innersec-bb">
             <h3>Get to know more about Us!</h3>
-            <a href="#">View More</a>
+            <a href="{{url('team')}}">View More</a>
         </div>
     </div>
 </div>
