@@ -139,7 +139,7 @@
                         <!-- Second Row -->
                         <div class="second-row">
                             <div class="container">
-                                <div class="row @if($i % 2 != 0) justify-content-end @endif">
+                                <div class="row justify-content-end">
                                     <div class="col-lg-7 col-md-7">
                                         <div class="managing-box-content-main">
                                             <div class="managing-box-content">
