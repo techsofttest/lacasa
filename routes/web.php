@@ -10,7 +10,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\AchievementController;
 
-
+/*
 use Livewire\Livewire;
 
 Livewire::setScriptRoute(function ($handle) {
@@ -20,6 +20,7 @@ return Route::get('/livewire/livewire.js', $handle);
 Livewire::setUpdateRoute(function ($handle) {
 return Route::post('/livewire/update', $handle);
 });
+*/
 
 
 
@@ -52,10 +53,11 @@ Route::get('/run-artisan-commands', function () {
 
 
 
-Route::get('/clear-cache', function () {
+Route::get('/install-app', function () {
     Artisan::call('config:clear');
     Artisan::call('optimize');
     Artisan::call('route:clear');
+    Artisan::call('storage:link');
     return 'Cache cleared successfully!';
 });
 
