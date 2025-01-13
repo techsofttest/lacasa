@@ -1,0 +1,72 @@
+@extends('layouts.app')
+
+
+@section('head_extras')
+
+
+
+@endsection
+
+
+
+@section('content')
+
+
+<div class="CliAchiwvment-in ">
+  <div class="container">
+  <div class="wow tpfadeUp" data-wow-duration=".9s" data-wow-delay=".3s">
+  <h3>Clientle</h3>
+   
+  {!! $clientele->content !!}
+
+</div>
+ <div class="Clicccc-box ">
+ <div class="row clinate-iii ">
+ 
+ 
+ @foreach($c_images as $img)
+
+ <div class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex wow tpfadeUp" data-wow-duration=".9s" data-wow-delay=".3s">
+ <div class="recc-box">
+  <div class="recc-box-img">
+ <img src="{{asset('storage')}}/{{$img->image}}" alt="{{$img->name}}" width="100%">
+ </div>
+ </div>
+ 
+ </div>
+ @endforeach
+
+
+
+  
+
+ 
+ </div>
+ 
+ 
+		  
+		  
+ 
+ 
+ </div>
+
+
+ </div>
+  
+	  </div>
+	  
+	  
+	 
+
+
+@endsection
+
+
+@section('footer_extras')
+
+
+
+@endsection
+
+
+
