@@ -60,6 +60,8 @@
 
 
 
+                     @if(!empty($banner_video))
+
                      @if(!empty($banner_video->video))
 
                      <div class="swiper-slide">
@@ -78,6 +80,8 @@
                         </div>
 
                         </div>
+
+                        @endif
 
                         @endif
 
