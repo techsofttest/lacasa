@@ -38,7 +38,7 @@ class PageResource extends Resource
 
                 Forms\Components\FileUpload::make('banner')->hidden(fn ($record) => !$record || ($record->slug === 'portfolio' || $record->slug === 'contact'))->directory('uploads/banners')->lazy()->moveFiles(),
 
-                Forms\Components\FileUpload::make('slider_images')->hidden(fn ($record) => !$record || $record->slug !== 'home')->reorderable()->panelLayout('grid')->multiple()->directory('uploads/banners')->lazy()->moveFiles(),
+                Forms\Components\FileUpload::make('slider_images')->hidden(fn ($record) => !$record || $record->slug !== 'home')->reorderable()->panelLayout('grid')->multiple()->directory('uploads/banners')->lazy(),
                
                 //Forms\Components\RichEditor::make('content'),
 
