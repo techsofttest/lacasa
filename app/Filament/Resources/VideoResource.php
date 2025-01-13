@@ -27,7 +27,7 @@ class VideoResource extends Resource
                 ->schema([
                 Forms\Components\TextInput::make('name')->disabled(),
                 Forms\Components\FileUpload::make('poster')->directory('uploads/videos')->required(),
-                Forms\Components\FileUpload::make('video')->label('Video File (Max 10 Mb)')->directory('uploads/videos')->required()
+                Forms\Components\FileUpload::make('video')->label('Video File (Max 10 Mb)')->directory('uploads/videos')
                 ->rules(function ($get) {
                     return [
                         'max:51200',
@@ -53,8 +53,8 @@ class VideoResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                 Tables\Actions\BulkActionGroup::make([
+                    //Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
     }

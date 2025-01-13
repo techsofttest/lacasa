@@ -57,7 +57,12 @@
                      <div class="swiper-wrapper">
 
 
-                        <div class="swiper-slide">
+
+
+
+                     @if(!empty($banner_video->video))
+
+                     <div class="swiper-slide">
                           <div class="video-container my_video_c">
       <div class="video-item" data-portrait-index="0" data-vimeo="299739458"  data-vimeo-start="0s" data-vimeo-width="640" data-vimeo-height="272">
         <video loop="" autoplay=""  muted class="html-video" poster="{{asset('storage')}}/{{$banner_video->poster}}">
@@ -70,11 +75,11 @@
                <a class="video_btn goToFirstVideo" href="javascript:void(0);"><i class="fa fa-video"></i> View Intro</a> 
                </div>
 
- </div>
-
-                  
+                        </div>
 
                         </div>
+
+                        @endif
 
 
                         
