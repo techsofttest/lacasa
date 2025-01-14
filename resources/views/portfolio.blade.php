@@ -101,7 +101,7 @@
 	 <div class="container">
 	 
 
-      <div  class="_df_book" id="flipbook_pdf" source="{{asset('assets/img/portfolio/COMPANY-OVERVIEW.pdf')}}" style="padding-left:30px;padding-right:30px;"></div>
+      <div  class="_df_book" id="flipbook_pdf" source="{{asset('storage')}}/{{$company_profile->pdf_file}}" style="padding-left:30px;padding-right:30px;"></div>
 
 	 </div>
 	 

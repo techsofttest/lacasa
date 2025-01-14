@@ -73,7 +73,7 @@
 
    @foreach($dates as $date)
    <div class="col-lg-12">
-      <a href="#">{{ $date->month_year }}</a>
+   <a href="{{ url()->current() }}?time={{ $date->month_year }}">{{ $date->month_year }}</a>
    </div>
    @endforeach
 

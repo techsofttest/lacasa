@@ -84,6 +84,12 @@
                         @endif
 
                         @endif
+                        
+                        
+                        @php
+    $banner_text = explode(',', $page->title); // Convert the string back into an array
+    $bt=0;
+@endphp
 
 
 
@@ -97,7 +103,7 @@
                                     <div class="row align-items-center justify-content-between">
 									    <div class="col-lg-12">
                                        <div class="baner-trexts">
-									   <h2>ELLINGTON</h2>
+									   <h2>{{ $banner_text[1] ?? '' }}</h2>
 									   </div>
 
 
@@ -113,6 +119,11 @@
                               </div>
                            </div>
                         </div>
+                        
+                        
+                        @php
+                        $bt++;
+                        @endphp
 
 
                         
@@ -135,7 +146,7 @@
                                     <div class="row align-items-center justify-content-between">
 									    <div class="col-lg-12">
                                        <div class="baner-trexts">
-									   <h2>ELLINGTON</h2>
+									   <h2>{{ $banner_text[$bt] ?? '' }}</h2>
 									   </div>
 
 
@@ -151,7 +162,7 @@
                               </div>
                            </div>
                         </div>
-
+                        @php $bt++ @endphp
                         @endforeach
                         @endif
 
